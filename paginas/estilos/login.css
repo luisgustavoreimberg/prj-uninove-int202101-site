@@ -1,0 +1,171 @@
+body{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0.1)), url("../../imagens/fundo_site.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: rgb(255,255,255);
+}
+
+.grupo-formulario-login{
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.8);
+    border-radius: 10px;
+    margin: auto;
+    width: 60%;
+    min-width: 400px;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    margin-top: 5%;
+}
+
+.titulo-jogo{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    padding: 2%;
+    text-shadow: 4px 3px 3px rgba(0,0,0,0.8);
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
+
+.info-formulario-jogo{
+   width: 100%;
+   font-size: 1.2em;
+   font-weight: bold;
+}
+
+.formulario-login{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color:rgba(0, 0, 0, 0.8);
+    padding: 2%;
+}
+
+.botao-enviar{
+    font-size: 1.3em;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.botao-enviar:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    color: rgb(255,255,255);
+}
+
+.botao-esqueci-senha{
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    border: none;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.link-criar-conta{
+    text-align: end;
+    font-size: 1.3em;
+}
+.link-criar-conta a{
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.link-criar-conta a:hover{
+    color: rgb(255,255,255);
+}
+
+.campo_titulo{
+    font-weight: bold;
+    border:none;
+}
+
+.campo-senha{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border: 2px solid rgb(255,255,255);
+    border-radius: 5px;
+}
+
+#cadastro_novo_usuario input{
+    color: black;
+}
+#cadastro_novo_usuario input:focus::placeholder{
+    color: rgb(200, 200, 200);
+}
+
+/*################ BOOTSTRAP ################*/
+.form-control{
+    background-color: transparent;
+    border: 2px solid rgb(255,255,255);
+    font-size: 1.3em;
+    transition: 0.5s;
+    color: rgb(255,255,255);
+}
+.campo-senha-input{
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.form-control::placeholder{
+    color: rgba(0,0,0,0.5);
+}
+.form-control:focus::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+.form-control:focus{
+    background-color: rgba(255, 255, 255, 1);
+    /* background-color: transparent; */
+    color: rgba(0,0,0,0.8);
+    box-shadow: none;
+}
+.form-control:focus + label{
+    color: rgba(0, 0, 0, 1);
+}
+
+.input-group-text{
+    background-color: transparent;
+    font-weight: bold;
+    border: 2px solid rgb(255,255,255);
+    font-size: 1.3em;
+    color: rgb(255,255,255);
+}
+
+.collapse{
+    color: black;
+}
+.collapse input{
+    border: 1px solid black
+}
+
+.modal{
+    color:black
+}
+.modal input{
+    border: 1px solid black;
+}
+.modal .form-control{
+    color: black;
+}
+.modal .form-control:focus::placeholder{
+    color: rgb(160, 160, 160);
+}
+/*###########################################*/
+
+@media(max-width: 1200px){
+    .grupo-formulario-login{
+        margin-top: 15%;
+        width: 90%;
+    }
+    .campo-senha{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1fr);
+    }
+    .botao-esqueci-senha{
+        border-radius: 0%;
+    }
+    .campo-senha-input{
+        border-radius: 0%;
+    }
+}
