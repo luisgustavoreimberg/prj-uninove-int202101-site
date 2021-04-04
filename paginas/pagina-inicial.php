@@ -6,6 +6,16 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
+        <?php
+          session_start();
+
+          if((!isset ($_SESSION['usuario']) == true))
+          {
+            unset($_SESSION['usuario']);
+            header('location:login.php');
+          }
+        ?>
+
         <link rel="stylesheet" href="./estilos/base.css">
         <link rel="stylesheet" href="./estilos/pagina-inicial.css">
     </head>
@@ -14,15 +24,15 @@
         <nav class="navbar navbar-light barra-de-nav">
             <div class="container-fluid">
                 <div class="navbar-brand" href="#">
-                    <button type="button" class="btn btn-outline-light botao-home" data-bs-toggle="tooltip" data-bs-placement="right" title="MEU PERFIL">
+                    <a href="http://localhost/prj-integrador-jogo-site/paginas/pagina-perfil.php" type="button" class="btn btn-outline-light botao-home" data-bs-toggle="tooltip" data-bs-placement="right" title="MEU PERFIL">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                         </svg>
-                    </button>
+                    </a>
                 </div>
 
-                <button type="button" class="btn btn-lg btn-outline-light botao-sair">
+                <button type="button" class="btn btn-lg btn-outline-light botao-sair" data-bs-toggle="modal" data-bs-target="#modal-sair">
                     SAIR
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
@@ -33,7 +43,8 @@
         </nav>
         <br/>
 
-        <div class="container">
+
+        <div class="container jogo-area">
             <div class="row">
                 <div class="col-12">
                     <div class="espaço-jogo"></div>
@@ -167,6 +178,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="modal fade" id="modal-sair" tabindex="-1" aria-labelledby="modal-sair-titulo" aria-hidden="true">
+            <form action="http://localhost/prj-integrador-jogo-site/paginas/php/sair-ctrl.php" method="GET">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-sair-titulo">Deseja mesmo sair?</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-outline-danger">Sair</button>
+                    </div>
+                    </div>
+                </div>
+            </form>
         </div>
 
     </body>

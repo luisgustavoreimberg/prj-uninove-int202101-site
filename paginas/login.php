@@ -12,23 +12,27 @@
 
     <body>
 
-
         <div class="grupo-formulario-login">
             <div class="titulo-jogo">NOME DO JOGO</div>
 
             <div class="formulario-login">
                 <div class="info-formulario-jogo">Preencha as informações para entrar em sua aventura:</div><br/>
 
-                <form>
+                <!--#### LOGIN ####-->
+                <form action="http://localhost/prj-integrador-jogo-site/paginas/php/login-ctrl.php" method="post">
                     <div class="form-floating mb-3">
                         <!-- is-invalid -->
-                        <input type="text" class="form-control" id="campo_usuario" placeholder="meu_usuario" required>
-                        <label class="campo_titulo" for="campo_usuario">USUÁRIO</label>
+                        <input type="text" class="form-control" 
+                        id="campo_usuario" placeholder="meu_usuario"
+                        name="login-usuario" required>
+                        <label class="campo_titulo" for="campo_usuario">USUÁRIO OU EMAIL</label>
                     </div>
 
                     <div class="campo-senha">
                         <div class="form-floating">
-                            <input type="password" class="form-control campo-senha-input" id="campo_senha" placeholder="minha_senha" required aria-describedby="esqueci-senha">
+                            <input type="password" class="form-control campo-senha-input" 
+                            id="campo_senha" placeholder="minha_senha" aria-describedby="esqueci-senha"
+                            name="login-senha" required>
                             <label class="campo_titulo" for="campo_senha">SENHA</label>
                         </div>
                         <button type="button" id="esqueci-senha" class="btn btn-outline-light botao-esqueci-senha" data-bs-toggle="modal" data-bs-target="#exampleModal">Esqueci minha senha</button>
@@ -38,41 +42,53 @@
                         <button type="submit" class="btn btn-light botao-enviar">Entrar na aventura</button>
                     </div><br/>
                       
-                    <div class="link-criar-conta">
-                        Não possui conta? <a data-bs-toggle="collapse" href="#cadastro_novo_usuario" aria-expanded="false" aria-controls="cadastro_novo_usuario">Criar Conta</a>
-                    </div>
                 </form>
 
+                <div class="link-criar-conta">
+                    Não possui conta? <a data-bs-toggle="collapse" href="#cadastro_novo_usuario" aria-expanded="false" aria-controls="cadastro_novo_usuario">Criar Conta</a>
+                </div>
+
+                <!--#### CRIAR CONTA ####-->
                 <div class="collapse" id="cadastro_novo_usuario">
                     <div class="card card-body">
-                        <form>
+                        <form action="http://localhost/prj-integrador-jogo-site/paginas/php/criar-conta-ctrl.php" method="POST">
                             <div class="row">
                                 <h3>Preencha os dados para criar sua conta:</h3>
                             </div>
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="campo_cadastro_nome" placeholder="nome" required>
+                                        <input type="text" class="form-control" id="campo_cadastro_nome" placeholder="nome" 
+                                        name="conta-nome" required>
                                         <label for="campo_cadastro_nome">NOME*</label>
                                     </div>
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="campo_cadastro_sobrenome" placeholder="sobrenome">
+                                        <input type="text" class="form-control" id="campo_cadastro_sobrenome" placeholder="sobrenome"
+                                        name="conta-sobrenome">
                                         <label for="campo_cadastro_sobrenome">SOBRENOME</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="campo_cadastro_email" placeholder="meu_email@mail.com" required>
+                                <input type="email" class="form-control" id="campo_cadastro_email" placeholder="meu_email@mail.com" 
+                                name="conta-email" required>
                                 <label for="campo_cadastro_email">EMAIL*</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="campo_cadastro_senha" placeholder="senha" required>
+                                <input type="text" class="form-control" id="campo_cadastro_apelido" placeholder="meu_apelido" 
+                                name="conta-apelido" required>
+                                <label for="campo_cadastro_email">APELIDO*</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="campo_cadastro_senha" placeholder="senha" 
+                                name="conta-senha" required>
                                 <label for="campo_cadastro_senha">SENHA*</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="campo_cadastro_senha_confirmacao" placeholder="minha_senha" required>
+                                <input type="password" class="form-control" id="campo_cadastro_senha_confirmacao" placeholder="minha_senha" 
+                                name="conta-senhaconf" required>
                                 <label for="campo_cadastro_senha_confirmacao">CONFIRMAÇÃO DE SENHA*</label>
                             </div>
 
@@ -87,6 +103,7 @@
             </div>
         </div>
         
+        <!--#### RECUPERAÇÃO DE SENHA ####-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">

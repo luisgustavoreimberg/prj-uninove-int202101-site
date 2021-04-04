@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0.1)), url("../../imagens/fundo_site.jpeg");
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0.1)), url("../../imagens/fundo_site_login.png");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -73,7 +73,7 @@ body{
     transition: 0.5s;
 }
 .link-criar-conta a:hover{
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
 }
 
 .campo_titulo{
@@ -86,6 +86,9 @@ body{
     grid-template-columns: 2fr 1fr;
     border: 2px solid rgb(255,255,255);
     border-radius: 5px;
+}
+.form-control.is-invalid .campo-senha{
+    border: 2px solid rgb(220, 53, 69);
 }
 
 #cadastro_novo_usuario input{

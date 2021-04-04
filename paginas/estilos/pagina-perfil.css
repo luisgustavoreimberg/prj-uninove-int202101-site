@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("../../imagens/fundo_site.jpeg");
+    background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("../../imagens/fundo_site_login.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -39,6 +39,13 @@ body{
 .form-control:focus + label{
     color: rgba(0, 0, 0, 1);
 }
+.form-control:disabled{
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+}
+.form-control:disabled + label{
+    color: rgba(255, 255, 255, 1);
+}
 
 .info-classificacao{
     text-align: center;
@@ -50,14 +57,4 @@ body{
 
 .botao-mostrar-senha label{
     font-weight: normal;
-}
-
-
-
-@media(max-width: 1000px){
-    .campo-senha{
-        display: grid;
-        grid-template-columns: 5fr 1fr;
-        grid-template-rows: repeat(2, 1fr);
-    }
 }
