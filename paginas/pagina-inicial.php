@@ -14,6 +14,10 @@
             unset($_SESSION['usuario']);
             header('location:login.php');
           }
+          if((!isset($_SESSION["ranking"]) == true)){
+            unset($_SESSION["ranking"]);
+            header('location:php/ranking-ctrl.php');
+          }
         ?>
 
         <link rel="stylesheet" href="./estilos/base.css">
@@ -77,26 +81,23 @@
                             </thead>
 
                             <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">4</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">5</th>
-                                <td>Mark</td>
-                              </tr>
+                              <?php
+                                if(isset($_SESSION["ranking"])==false){
+                                  echo "<tr>SEM DADOS<tr>";
+                                }
+                                else{
+                                  for($i=0; $i<5; $i++){
+                                    if(empty($_SESSION["ranking"][$i]))
+                                    {
+                                      break;
+                                    }
+                                    echo"<tr>";
+                                    echo"<th scope='row'>".$_SESSION["ranking"][$i]["posicao"]."</th>";
+                                    echo"<td>".$_SESSION["ranking"][$i]["nome"]."</td>";
+                                    echo"</tr>";
+                                  }
+                                }
+                              ?>
                             </tbody>
                         </table>
                         <div class="row sua-posicao">
@@ -129,46 +130,19 @@
                             </thead>
 
                             <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">4</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">5</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">6</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">7</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">8</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">9</th>
-                                <td>Mark</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">10</th>
-                                <td>Mark</td>
-                              </tr>
+                            <?php
+                                if(isset($_SESSION["ranking"])==false){
+                                  echo "<tr>SEM DADOS<tr>";
+                                }
+                                else{
+                                  foreach($_SESSION["ranking"] as $ranking){
+                                    echo"<tr>";
+                                    echo"<th scope='row'>".$ranking["posicao"]."</th>";
+                                    echo"<td>".$ranking["nome"]."</td>";
+                                    echo"</tr>";
+                                  }
+                                }
+                              ?>
                             </tbody>
                         </table>
                     </div>

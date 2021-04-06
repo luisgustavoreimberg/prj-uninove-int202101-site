@@ -28,6 +28,8 @@
           $apelido = "-";
           $senha = "-";
 
+          unset($_SESSION["ranking"]);
+
           if((!isset ($_SESSION['perfil-email']) == true) and (!isset ($_SESSION['perfil-senha']) == true))
             {
                 header('location:php/perfil-ctrl.php');
@@ -36,7 +38,7 @@
             $nome = $_SESSION['perfil-nome'];
             $sobrenome = $_SESSION['perfil-sobrenome'];
             $email = $_SESSION['perfil-email'];
-            $apelido = $_SESSION['perfil-nome'];
+            $apelido = $_SESSION['perfil-apelido'];
             $senha = $_SESSION['perfil-senha'];
         ?>
 

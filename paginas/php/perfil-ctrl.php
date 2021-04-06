@@ -2,7 +2,7 @@
     if($_SERVER["REQUEST_METHOD"] == "GET")
     {
         session_start();
-
+        
         $user = "root"; 
         $password = ""; 
         $database = "uninove_jogo";
@@ -42,6 +42,12 @@
 
         $query = "UPDATE usuario SET UsuarioNome = '".$_POST["atualizacao-nome"]."', UsuarioSobrenome = '".$_POST["atualizacao-sobrenome"]."', UsuarioEmail = '".$_POST["atualizacao-email"]."', UsuarioApelido = '".$_POST["atualizacao-apelido"]."', UsuarioSenha = '".$_POST["atualizacao-senha"]."' WHERE UsuarioID = ".$_SESSION['usuario'];
         $conn->query($query) or die('ERRO QUERY '.$query);
+
+        unset($_SESSION["perfil-nome"]);
+        unset($_SESSION["perfil-sobrenome"]);
+        unset($_SESSION["perfil-email"]);
+        unset($_SESSION["perfil-apelido"]);
+        unset($_SESSION["perfil-senha"]);
         
         header("Location: http://localhost/prj-integrador-jogo-site/paginas/pagina-perfil.php");
     }

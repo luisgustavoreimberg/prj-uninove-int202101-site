@@ -2,7 +2,7 @@
 if($_SERVER["REQUEST_METHOD"] == "GET")
     {
         session_start();
-        $_SESSION = array();
+        unset($_SESSION["usuario"]);
         header("Location: http://localhost/prj-integrador-jogo-site/paginas/login.php");
     }
 ?>
