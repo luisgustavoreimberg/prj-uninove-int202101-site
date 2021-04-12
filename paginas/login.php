@@ -13,17 +13,17 @@
     <body>
 
         <div class="grupo-formulario-login">
-            <div class="titulo-jogo">NOME DO JOGO</div>
+            <div class="titulo-jogo">G'Mola Adventure</div>
 
             <div class="formulario-login">
-                <div class="info-formulario-jogo">Preencha as informações para entrar em sua aventura:</div><br/>
+                <h2><strong>Diga quem você é, e entre em sua aventura!</strong></h2>
 
                 <!--#### LOGIN ####-->
-                <form action="http://localhost/prj-integrador-jogo-site/paginas/php/login-ctrl.php" method="post">
+                <form action="http://localhost/prj-integrador-jogo-site/paginas/php/login-ctrl.php" method="POST">
                     <div class="form-floating mb-3">
                         <!-- is-invalid -->
                         <input type="text" class="form-control" 
-                        id="campo_usuario" placeholder="meu_usuario"
+                        id="campo_usuario" placeholder="..."
                         name="login-usuario" required>
                         <label class="campo_titulo" for="campo_usuario">USUÁRIO OU EMAIL</label>
                     </div>
@@ -31,7 +31,7 @@
                     <div class="campo-senha">
                         <div class="form-floating">
                             <input type="password" class="form-control campo-senha-input" 
-                            id="campo_senha" placeholder="minha_senha" aria-describedby="esqueci-senha"
+                            id="campo_senha" placeholder="..." aria-describedby="esqueci-senha"
                             name="login-senha" required>
                             <label class="campo_titulo" for="campo_senha">SENHA</label>
                         </div>
@@ -39,66 +39,13 @@
                     </div><br/>
 
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-light botao-enviar">Entrar na aventura</button>
-                    </div><br/>
-                      
+                        <button type="submit" class="btn btn-light botao-enviar">ENTRAR NA AVENTURA</button>
+                    </div><br/>                     
                 </form>
 
                 <div class="link-criar-conta">
-                    Não possui conta? <a data-bs-toggle="collapse" href="#cadastro_novo_usuario" aria-expanded="false" aria-controls="cadastro_novo_usuario">Criar Conta</a>
+                    Não possui conta? <a href="http://localhost/prj-integrador-jogo-site/paginas/criar-conta.php">Criar Conta</a>
                 </div>
-
-                <!--#### CRIAR CONTA ####-->
-                <div class="collapse" id="cadastro_novo_usuario">
-                    <div class="card card-body">
-                        <form action="http://localhost/prj-integrador-jogo-site/paginas/php/criar-conta-ctrl.php" method="POST">
-                            <div class="row">
-                                <h3>Preencha os dados para criar sua conta:</h3>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="campo_cadastro_nome" placeholder="nome" 
-                                        name="conta-nome" required>
-                                        <label for="campo_cadastro_nome">NOME*</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="campo_cadastro_sobrenome" placeholder="sobrenome"
-                                        name="conta-sobrenome">
-                                        <label for="campo_cadastro_sobrenome">SOBRENOME</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="campo_cadastro_email" placeholder="meu_email@mail.com" 
-                                name="conta-email" required>
-                                <label for="campo_cadastro_email">EMAIL*</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="campo_cadastro_apelido" placeholder="meu_apelido" 
-                                name="conta-apelido" required>
-                                <label for="campo_cadastro_email">APELIDO*</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="campo_cadastro_senha" placeholder="senha" 
-                                name="conta-senha" required>
-                                <label for="campo_cadastro_senha">SENHA*</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="campo_cadastro_senha_confirmacao" placeholder="minha_senha" 
-                                name="conta-senhaconf" required>
-                                <label for="campo_cadastro_senha_confirmacao">CONFIRMAÇÃO DE SENHA*</label>
-                            </div>
-
-                            <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-dark">Criar conta</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
             </div>
         </div>
         
@@ -126,7 +73,6 @@
               </div>
             </div>
         </div>
-
 
     </body>
 </html>

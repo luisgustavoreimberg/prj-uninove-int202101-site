@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700;800&display=swap');
 
+@font-face{
+    src:url("../../fonts/Pieces of Eight.ttf");
+    font-family: "Pieces of Eight";
+}
+
 body{
     /* background-image: url("https://4.bp.blogspot.com/-w99lR-lqayQ/WxFaVWjBYLI/AAAAAAAAGT4/QnbFHQptiBwOpMXyjbqIYK1u7I9K3f8CACLcBGAs/s1600/1200835223_preview_20171114190957_1.jpg"); */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0.1)), url("../../imagens/fundo_site_login.png");
@@ -7,7 +12,8 @@ body{
     background-size: cover;
 
     background-color: rgb(220, 220, 220);
-    font-family: 'Tillana', cursive;
+    font-family: "Pieces of Eight";
+    letter-spacing: 1px;
 }
 
 .navbar-brand{

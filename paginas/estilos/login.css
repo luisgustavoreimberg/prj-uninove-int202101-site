@@ -13,7 +13,7 @@ body{
     width: 60%;
     min-width: 400px;
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 0.5fr 3fr;
     margin-top: 5%;
 }
 
@@ -25,15 +25,16 @@ body{
     padding: 2%;
     text-shadow: 4px 3px 3px rgba(0,0,0,0.8);
     text-align: center;
-    font-size: 2em;
+    font-size: 3em;
+    letter-spacing: 3px;
     font-weight: bold;
     color: white;
 }
 
 .info-formulario-jogo{
    width: 100%;
-   font-size: 1.2em;
-   font-weight: bold;
+   font-size: 2em;
+   /* font-weight: bold; */
 }
 
 .formulario-login{
@@ -55,7 +56,7 @@ body{
 }
 
 .botao-esqueci-senha{
-    font-size: 1.3em;
+    font-size: 1.5em;
     letter-spacing: 1px;
     transition: 0.5s;
     border: none;
@@ -102,7 +103,7 @@ body{
 .form-control{
     background-color: transparent;
     border: 2px solid rgb(255,255,255);
-    font-size: 1.3em;
+    font-size: 1.8em;
     transition: 0.5s;
     color: rgb(255,255,255);
 }

@@ -2,16 +2,6 @@
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if($_POST["conta-senha"] == $_POST["conta-senhaconf"]){
-            $user = "root"; 
-            $password = ""; 
-            $database = "uninove_jogo";
-            $hostname = "localhost";
-            $conn = new mysqli($hostname, $user, $password, $database) or die('ERRO CONN');
-
-            $query = "SELECT UsuarioID FROM usuario WHERE UsuarioApelido LIKE '".$_POST["conta-apelido"]."' OR UsuarioEmail LIKE '".$_POST["conta-email"]."'";
-
-            $result = $conn->query($query) or die('Erro na query'.$query);
-            $row = $result->fetch_row();
 
             if(empty($row)){
                 $query = "INSERT INTO usuario(UsuarioNome, UsuarioSobreNome, UsuarioApelido,UsuarioEmail, UsuarioSenha)
@@ -34,6 +24,7 @@
             window.history.back();
             </SCRIPT>");
         }
-
+    }else{
+        header("Location: ../criar-conta.php");
     }
 ?>

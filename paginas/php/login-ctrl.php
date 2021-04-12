@@ -1,40 +1,27 @@
-<html>
-    <head>
-        <title>Login</title>
+<?php
 
-        <link rel="stylesheet" href="./estilos/base.css">
-    </head>
+    if($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        require_once 'servicos/requisicao-servico.php';
+        $url  = "http://localhost/prj-integrador-servico/View/usuario/login-usuario.php";
 
-    <body>
-        <?php
-            if($_SERVER["REQUEST_METHOD"] == "POST")
-            {
-                session_start();
+        $dados = array(
+            'usuario' => $_POST["login-usuario"],
+            'senha' => $_POST["login-senha"]
+        );
+        $r = json_decode(chamarAPI("POST", $url, json_encode($dados)));
+        if(!isset($r->UsuarioID)){
+            echo ("<SCRIPT LANGUAGE='JavaScript'>
+            window.alert('USUÁRIO OU SENHA INVÁLIDOS!')
+            window.history.back();
+            </SCRIPT>");
+        }else{
+            session_start();
+            $_SESSION["usuario"] = $r;
+            header("Location: ../pagina-inicial.php");
+        }
+    }else{
+        header("Location: ../login.php");
+    }
 
-                $usuarioDB = "root"; 
-                $senhaDB = ""; 
-                $baseDeDados = "uninove_jogo";
-                $nomeHost = "localhost";
-                $conn = new mysqli($nomeHost, $usuarioDB, $senhaDB, $baseDeDados) or die('Sem conexão com o servidor!');
-
-                $query = "SELECT UsuarioID FROM usuario WHERE (UsuarioApelido = '".$_POST["login-usuario"]."' OR UsuarioEmail = '".$_POST["login-usuario"]."') AND UsuarioSenha = '".$_POST["login-senha"]."'";
-                $result = $conn->query($query) or die('Erro na query de login!'.$query);
-                $row = $result->fetch_row();
-
-                if(empty($row))
-                {
-                    unset($_SESSION['usuario']);
-
-                    echo ("<SCRIPT LANGUAGE='JavaScript'>
-                        window.alert('USUÁRIO OU SENHA INVÁLIDOS!')
-                        window.location.href='http://localhost/prj-integrador-jogo-site/paginas/login.php';
-                        </SCRIPT>");
-                }else{
-                    $_SESSION['usuario'] = $row[0];
-                    header("Location: http://localhost/prj-integrador-jogo-site/paginas/pagina-inicial.php");
-                }
-            }
-        ?>
-    </body>
-
-</html>
+?>
