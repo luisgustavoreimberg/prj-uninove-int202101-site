@@ -13,7 +13,7 @@ body{
 }
 .nome-usuario{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2.5em;
     font-weight: bold;
 }
 
@@ -32,12 +32,9 @@ body{
 .coluna-info label{
     font-weight: bold;
 }
-.coluna-info input:focus{
-    color: rgba(0, 0, 0, 1);
-    box-shadow: none;
-}
-.form-control:focus + label{
-    color: rgba(0, 0, 0, 1);
+
+.form-control{
+    font-size: 1.5em;
 }
 .form-control:disabled{
     background-color: transparent;
@@ -49,12 +46,14 @@ body{
 
 .info-classificacao{
     text-align: center;
+    font-size: 1.3em;
 }
 
 .container{
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
 }
 
-.botao-mostrar-senha label{
-    font-weight: normal;
+.btn-editar{
+    font-size: 1.5em;
+    font-weight: bold;
 }

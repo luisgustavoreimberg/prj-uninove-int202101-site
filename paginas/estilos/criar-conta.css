@@ -6,36 +6,36 @@ body{
     color: rgb(255,255,255);
 }
 
-.formulario-login{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color:rgba(0, 0, 0, 0.8);
-    padding: 2%;
+.titulo{
+    font-family: "Pieces of Eight";
+    font-size: 4em;
+    padding: 0%;
+    text-align: center;
 }
 
-.link-criar-conta{
-    text-align: end;
-    font-size: 1.8em;
-}
-.link-criar-conta a{
-    text-decoration: none;
+.botao-login{
+    font-family: "Comic Neue";
+    font-size: 1em;
     font-weight: bold;
-    transition: 0.5s;
-}
-.link-criar-conta a:hover{
-    font-size: 1.3em;
-    color: rgb(255, 255, 255);
+    /* border-radius: 0%; */
 }
 
-.grupo-formulario-login{
+.grupo-formulario-cadastro{
     box-shadow: 10px 10px 10px rgba(0,0,0,0.8);
     border-radius: 10px;
     margin: auto;
     width: 60%;
     min-width: 400px;
     display: grid;
-    grid-template-rows: 0.5fr 3fr;
-    margin-top: 2%;
+    grid-template-rows: 0.8fr 5fr;
+    margin-top: 1%;
+}
+
+.formulario-cadastro{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color:rgba(0, 0, 0, 0.8);
+    padding: 2%;
 }
 
 .info-formulario-jogo{
@@ -56,7 +56,6 @@ body{
 
 .botao-esqueci-senha{
     font-size: 1.5em;
-    font-weight: bold;
     letter-spacing: 1px;
     transition: 0.5s;
     border: none;
@@ -69,28 +68,12 @@ body{
     border:none;
 }
 
-.campo-senha{
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    border: 2px solid rgb(255,255,255);
-    border-radius: 5px;
-}
-.campo-senha.is-invalid{
-    border: 2px solid rgb(220, 53, 69);
-}
-
-.erro{
-    color: rgb(220, 53, 69);
-    text-align: center;
-}
-
 #cadastro_novo_usuario input{
     color: black;
 }
 #cadastro_novo_usuario input:focus::placeholder{
     color: rgb(200, 200, 200);
 }
-
 
 /*################ BOOTSTRAP ################*/
 .form-control{
@@ -149,3 +132,20 @@ body{
     color: rgb(160, 160, 160);
 }
 /*###########################################*/
+
+@media(max-width: 1200px){
+    .grupo-formulario-login{
+        margin-top: 15%;
+        width: 90%;
+    }
+    .campo-senha{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1fr);
+    }
+    .botao-esqueci-senha{
+        border-radius: 0%;
+    }
+    .campo-senha-input{
+        border-radius: 0%;
+    }
+}

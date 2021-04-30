@@ -10,13 +10,13 @@
                     curl_setopt($curl, CURLOPT_POSTFIELDS, $dados);
                 break;
             case "PUT":
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST,  'PUT');
                 if($dados)
                     curl_setopt($curl, CURLOPT_POSTFIELDS, $dados);
                 break;
             default:
                 if($dados)
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, $dados);
+                    $url = $url."?".http_build_query($dados);
                 break;
         }
         curl_setopt($curl, CURLOPT_URL, $url);

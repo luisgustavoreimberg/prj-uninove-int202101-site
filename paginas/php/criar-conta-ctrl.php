@@ -1,27 +1,37 @@
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
+        session_start();
         if($_POST["conta-senha"] == $_POST["conta-senhaconf"]){
 
-            if(empty($row)){
-                $query = "INSERT INTO usuario(UsuarioNome, UsuarioSobreNome, UsuarioApelido,UsuarioEmail, UsuarioSenha)
-                VALUES('".$_POST["conta-nome"]."','".$_POST["conta-sobrenome"]."', '".$_POST["conta-apelido"]."','".$_POST["conta-email"]."','".$_POST["conta-senha"]."')";
-                $conn->query($query) or die('ERRO AO INSERIR USUÁRIO'.$query);
-                
+            require_once 'servicos/requisicao-servico.php';
+            $url  = "http://gmolaadventure.orgfree.com/prj-integrador-servico/View/usuario/criar-usuario.php";
+    
+            $dados = array(
+                'nome' => $_POST["conta-nome"],
+                'sobrenome' => $_POST["conta-sobrenome"],
+                'apelido' => $_POST["conta-apelido"],
+                'email' => $_POST["conta-email"],
+                'senha' => $_POST["conta-senha"]
+            );
+    
+            $resposta = json_decode(chamarAPI("POST", $url, json_encode($dados)));
+
+            if($resposta->Sucesso == false){
+                $encoding = mb_internal_encoding();
+                $_SESSION["erro-criar-conta"] = mb_strtoupper($resposta->MensagemResposta, $encoding);
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
-                window.alert('USUÁRIO CRIADO COM SUCESSO!')
-                window.location.href='http://localhost/prj-integrador-jogo-site/paginas/login.php';
+                    window.history.back();
                 </SCRIPT>");
             }else{
-                echo ("<SCRIPT LANGUAGE='JavaScript'>
-                window.alert('USUÁRIO ".$_POST["conta-apelido"]." COM EMAIL ".$_POST["conta-email"]." JÁ EXISTENTE!')
-                window.history.back();
-                </SCRIPT>");
+                $_SESSION["sucesso-conta"] = true;
+                header("Location: ../login.php");
             }
+
         }else{
+            $_SESSION["erro-criar-conta-preenchimento"] = "SENHAS DIVERGENTES";
             echo ("<SCRIPT LANGUAGE='JavaScript'>
-            window.alert('SENHA DIFERENTE DA CONFIRMAÇÃO!')
-            window.history.back();
+                window.history.back();
             </SCRIPT>");
         }
     }else{

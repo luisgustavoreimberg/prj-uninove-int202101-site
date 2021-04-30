@@ -7,40 +7,34 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
         <?php
-          session_start();
+            require './modulos/logout.php';
 
-          if((!isset ($_SESSION['usuario']) == true))
-          {
-            unset($_SESSION['usuario']);
-            header('location:login.php');
-          }
+            session_start();
+            
+            if(!isset($_SESSION["usuario-id"])){
+                unset($_SESSION["usuario-id"]);
+                unset($_SESSION['usuario']);
+                header('location:login.php');
+            }
+
+            if(!isset($_SESSION["usuario"])){
+                header('location: http://localhost/prj-integrador-jogo-site/paginas/php/perfil-ctrl.php');
+            }
+
+            $nome = $_SESSION["usuario"]->UsuarioNome;
+            $sobrenome = $_SESSION['usuario']->UsuarioSobreNome;
+            $email = $_SESSION['usuario']->UsuarioEmail;
+            $apelido = $_SESSION['usuario']->UsuarioApelido;
+            $senha = $_SESSION['usuario']->UsuarioSenha;
+            $pontos = $_SESSION['usuario']->UsuarioPontuacao;
+
         ?>
 
         <link rel="stylesheet" href="./estilos/base.css">
-        <link rel="stylesheet" href="./estilos/pagina-perfil.css">
+        <link rel="stylesheet" href="./estilos/perfil.css">
     </head>
 
     <body>
-        <?php
-          $nome = "-";
-          $sobrenome = "-";
-          $email = "-";
-          $apelido = "-";
-          $senha = "-";
-
-          unset($_SESSION["ranking"]);
-
-          if((!isset ($_SESSION['perfil-email']) == true) and (!isset ($_SESSION['perfil-senha']) == true))
-            {
-                header('location:php/perfil-ctrl.php');
-            }
-
-            $nome = $_SESSION['perfil-nome'];
-            $sobrenome = $_SESSION['perfil-sobrenome'];
-            $email = $_SESSION['perfil-email'];
-            $apelido = $_SESSION['perfil-apelido'];
-            $senha = $_SESSION['perfil-senha'];
-        ?>
 
         <nav class="navbar navbar-light barra-de-nav">
             <div class="container-fluid">
@@ -68,20 +62,19 @@
             <div class="row">
                 <div class="col-3 coluna-usuario">
                     <div class="row">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                         </svg>
                     </div><br/>
-                    <div class="row">
-                        <span class="nome-usuario">Nome do usuário</span>
+                    <div class="row nome-usuario">
+                        <span>
+                            <?php echo $apelido ?>
+                        </span>
                     </div>
                     <div class="row info-classificacao">
                         <span>
-                            <strong>Pontos:</strong> 0
-                        </span>
-                        <span>
-                            <strong>Posição</strong> &diams; 1°
+                            <strong>Pontos:</strong> <?php echo $pontos ?>
                         </span>
                     </div>
                 </div>
@@ -136,7 +129,7 @@
                         </div>
                         <div class="col">
                             <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#modal-atualizacao">
+                                <button type="button" class="btn-editar btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#modal-atualizacao">
                                     Editar
                                 </button>
                             </div>
@@ -210,23 +203,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-outline-success">Atualizar</button>
-                    </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="modal fade" id="modal-sair" tabindex="-1" aria-labelledby="modal-sair-titulo" aria-hidden="true">
-            <form action="http://localhost/prj-integrador-jogo-site/paginas/php/sair-ctrl.php" method="GET">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="modal-sair-titulo">Deseja mesmo sair?</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-outline-danger">Sair</button>
                     </div>
                     </div>
                 </div>

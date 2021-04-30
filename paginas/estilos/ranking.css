@@ -1,0 +1,68 @@
+body{
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("../../imagens/fundo_site_interno.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.titulo{
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Pieces of Eight";
+}
+
+.nav-link{
+    color: rgb(250, 250, 250);
+}
+
+.ranking-area{
+    padding: 2%;
+    margin-left: 0%;
+    width: 100%;
+    max-width: 800px;
+    height: 480px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 1);
+}
+
+.ranking-titulo{
+    font-weight: bold;
+    text-align: center;
+    font-family: "Pieces of Eight";
+}
+
+.ranking-tab-titulo{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.tab-pane{
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+thead tr th{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+thead{
+    background-color: rgba(0,0,0,1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.sua-posicao{
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.barra-de-rolagem{
+    height: 300px;
+    overflow-y: auto;
+}
