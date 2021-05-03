@@ -2,7 +2,6 @@ body{
     background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0.1)), url("../../imagens/fundo_site_login.png");
     background-repeat: no-repeat;
     background-size: cover;
-
     color: rgb(255,255,255);
 }
 
@@ -23,8 +22,10 @@ body{
     transition: 0.5s;
 }
 .link-criar-conta a:hover{
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+    letter-spacing: 2px;
 }
 
 .grupo-formulario-login{
@@ -41,17 +42,6 @@ body{
 .info-formulario-jogo{
    width: 100%;
    font-size: 2em;
-}
-
-.botao-enviar{
-    font-size: 1.3em;
-    font-weight: bold;
-    transition: 0.5s;
-}
-.botao-enviar:hover{
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    color: rgb(255,255,255);
 }
 
 .botao-esqueci-senha{
@@ -77,6 +67,21 @@ body{
 }
 .campo-senha.is-invalid{
     border: 2px solid rgb(220, 53, 69);
+}
+
+.botao-enviar{
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 0px;
+}
+.botao-enviar:hover{
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 1);
+    border-top: 1px solid rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
 }
 
 .erro{
@@ -113,7 +118,6 @@ body{
 }
 .form-control:focus{
     background-color: rgba(255, 255, 255, 1);
-    /* background-color: transparent; */
     color: rgba(0,0,0,0.8);
     box-shadow: none;
 }

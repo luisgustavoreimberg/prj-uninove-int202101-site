@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-floating mb-3">
                             <input type="password" class="form-control <?php echo (isset($_SESSION["erro-criar-conta-preenchimento"])?"is-invalid":""); ?>"
-                            id="campo_cadastro_senha_confirmacao" placeholder="minha_senha" minlength="5"
+                            id="campo_cadastro_senha_confirmacao" placeholder="minha_senha"
                             name="conta-senhaconf" required>
                             <label for="campo_cadastro_senha_confirmacao"><strong>CONFIRMAÇÃO DE SENHA*</strong></label>
                         </div>

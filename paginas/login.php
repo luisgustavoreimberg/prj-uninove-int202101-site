@@ -60,7 +60,8 @@
                 </form>
 
                 <h3 class="link-criar-conta">
-                    Não possui conta? <a href="http://localhost/prj-integrador-jogo-site/paginas/criar-conta.php">Criar Conta</a>
+                    Não possui conta? 
+                    <a href="http://localhost/prj-integrador-jogo-site/paginas/criar-conta.php">Criar Conta</a>
                 </h3><br/>
 
                 <div class="d-grid gap-2">

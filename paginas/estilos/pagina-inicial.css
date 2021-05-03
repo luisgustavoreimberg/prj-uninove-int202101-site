@@ -21,6 +21,7 @@ body{
     background-color: rgba(0, 0, 0, 0.7);
     padding:1%;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+    margin-top: 1%;
 }
 
 .jogo-desc{
@@ -40,7 +41,7 @@ body{
     color: rgba(0, 0, 0, 1);
 
     padding: 2%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 
@@ -50,5 +51,89 @@ body{
     }
     .jogo-area{
         margin: auto;
+    }
+}
+
+.botao-baixar{
+    border: 2px solid rgba(255, 255, 255, 1);
+    font-weight: bold;
+    font-size: 1.5em;
+    transition: 0.5s;
+}
+
+.card-body{
+    background-color: transparent;
+    border: none;
+}
+
+.btn-requisitos{
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+    border: none;
+    font-size: 1.5em;
+    text-align: start;
+    font-weight: bold;
+}
+
+.btn-requisitos:hover{
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+    border: none;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.efeito-baixar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-baixar {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 1);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    box-shadow: 5px 5px 24px rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+    position: relative;
+    padding: 10px;
+}
+.btn-baixar:hover {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+.btn-baixar:hover::before, .btn-baixar:focus::before {
+    opacity: 1;
+} 
+.btn-baixar::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 10px solid rgba(255, 255, 255, 1);
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+} 
+.btn-baixar:hover::after, .btn-baixar:focus::after {
+    animation: ring 1s infinite;
+}
+  
+@keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 600px;
+      height: 600px;
+      opacity: 0;
     }
 }

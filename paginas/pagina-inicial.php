@@ -53,30 +53,45 @@
                         Clique no botão abaixo e se junte a nossa aventura:
                         <div class="requisitos-jogo">
                             <div class="row">
-                                <h2>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                                </svg>
-                                Requisitos mínimos:</h2>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <img src="http://cdn.onlinewebfonts.com/svg/img_248263.png" width="30" height="30">
-                                    Windows 7
-                                </div>
-                                <div class="col">
-                                    <img src="https://svgsilh.com/svg/152655.svg" width="30" height="30">
-                                    2GB de RAM
-                                </div>
-                                <div class="col">
-                                    <img src="https://image.flaticon.com/icons/png/512/64/64481.png" width="30" height="30">
-                                    25GB livre em disco
+                                <a class="btn btn-requisitos" data-bs-toggle="collapse" href="#requisitos-minimos" role="button" aria-expanded="false" aria-controls="requisitos-minimos">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                                    Requisitos mínimos:
+                                </a>
+                                <div class="collapse" id="requisitos-minimos">
+                                    <div class="card card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <img src="http://cdn.onlinewebfonts.com/svg/img_248263.png" width="30" height="30">
+                                                Windows 7
+                                            </div>
+                                            <div class="col">
+                                                <img src="https://svgsilh.com/svg/152655.svg" width="30" height="30">
+                                                2GB de RAM
+                                            </div>
+                                            <div class="col">
+                                                <img src="https://image.flaticon.com/icons/png/512/64/64481.png" width="30" height="30">
+                                                25GB livre em disco
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div><br/>
 
                         <div class="d-grid gap-2">
-                            <a class="btn btn-outline-light botao-ranking" role="button">BAIXAR JOGO</a>
+                            <div class="efeito-baixar">
+                                <a class="btn btn-outline-light btn-baixar" role="button"
+                                    href="../download/teste.bat" download="gmola_adventure"
+                                    data-front="BAIXAR JOGO" data-back="ENTRAR NA AVENTURA">
+                                    BAIXAR JOGO
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </p>
                     <p>

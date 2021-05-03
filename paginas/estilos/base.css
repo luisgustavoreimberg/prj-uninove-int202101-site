@@ -7,15 +7,11 @@
 }
 
 body{
-    /* background-image: url("https://4.bp.blogspot.com/-w99lR-lqayQ/WxFaVWjBYLI/AAAAAAAAGT4/QnbFHQptiBwOpMXyjbqIYK1u7I9K3f8CACLcBGAs/s1600/1200835223_preview_20171114190957_1.jpg"); */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0.1)), url("../../imagens/fundo_site_login.png");
     background-repeat: no-repeat;
     background-size: cover;
-
     background-color: rgb(220, 220, 220);
     font-family: "Comic Neue";
-    /* font-size: 1.6em; */
-    letter-spacing: 1px;
 }
 
 .navbar-brand{
@@ -23,10 +19,9 @@ body{
 }
 
 .barra-de-nav{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
     padding-left: 1%;
     padding-right: 2%;
-
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -69,4 +64,12 @@ body{
     letter-spacing: 3px;
     font-weight: bold;
     color: white;
+}
+
+.btn{
+    transition: 0.5s;
+    letter-spacing: 0px;
+}
+.btn:hover{
+    letter-spacing: 2px;
 }

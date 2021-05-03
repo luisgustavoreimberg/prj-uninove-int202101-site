@@ -123,8 +123,22 @@
                         <div class="col">
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="campo-senha" disabled
-                                value=<?php echo $senha ?>>
-                                <label for="campo-senha">SENHA</label>
+                                value=<?php echo $_SESSION['usuario']->UsuarioSenha ?>>
+                                <label for="campo-apelido">SENHA</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <input type="checkbox" onclick="mostrarSenha()" class="btn-check" id="check-mostrar-senha" autocomplete="off">
+                            <label class="btn btn-outline-light check-senha" for="check-mostrar-senha">Mostrar Senha</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn-editar btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#modal-mudar-senha">
+                                    Trocar Senha
+                                </button>
                             </div>
                         </div>
                         <div class="col">
@@ -135,70 +149,90 @@
                             </div>
                         </div>
                     </div>
+
+                    <?php
+
+                        if(isset($_SESSION["erro-atualizacao"])){
+                            echo "<br/>";
+                            echo "<div class='alert alert-danger' role='alert'>";
+                            echo $_SESSION["erro-atualizacao"];
+                            echo "</div>";
+                        }
+                        if(isset($_SESSION["sucesso-atualizacao"])){
+                            echo "<br/>";
+                            echo "<div class='alert alert-success' role='alert'>";
+                            echo $_SESSION["sucesso-atualizacao"];
+                            echo "</div>";
+                        }
+                    
+                    ?>
+
+                    <script>
+                        function mostrarSenha() {
+                            var x = document.getElementById('campo-senha');
+                            if (x.type === "password") {
+                                x.type = "text";
+                            } else {
+                                x.type = "password";
+                            }
+                        }
+                    </script>
+
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="modal-atualizacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal-atualizacao" tabindex="-1" aria-labelledby="modal-atualizacao-titulo" aria-hidden="true">
             <form action="http://localhost/prj-integrador-jogo-site/paginas/php/perfil-ctrl.php" method="POST">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Editar Dados</h4>
+                        <h4 class="modal-title" id="modal-atualizacao-titulo">Editar Dados</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="campo-nome" required 
-                                        name = "atualizacao-nome"
-                                        value=<?php echo $nome ?>>
-                                        <label for="campo-nome">NOME*</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="campo-sobrenome"
-                                        name = "atualizacao-sobrenome"
-                                        value=<?php echo $sobrenome ?>>
-                                        <label for="campo-sobrenome">SOBRENOME</label>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="campo-email" required
-                                        name = "atualizacao-email"
-                                        value=<?php echo $email ?>>
-                                        <label for="campo-email">EMAIL*</label>
-                                    </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="campo-nome" required 
+                                    name = "atualizacao-nome"
+                                    value=<?php echo $nome ?>>
+                                    <label for="campo-nome">NOME*</label>
                                 </div>
                             </div>
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="campo-sobrenome"
+                                    name = "atualizacao-sobrenome"
+                                    value=<?php echo $sobrenome ?>>
+                                    <label for="campo-sobrenome">SOBRENOME</label>
+                                </div>
+                            </div>
+                        </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="campo-apelido" required
-                                        name = "atualizacao-apelido"
-                                        value=<?php echo $apelido ?>>
-                                        <label for="campo-apelido">APELIDO*</label>
-                                    </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="campo-email" required
+                                    name = "atualizacao-email"
+                                    value=<?php echo $email ?>>
+                                    <label for="campo-email">EMAIL*</label>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="campo-senha" required
-                                        name = "atualizacao-senha"
-                                        value=<?php echo $senha ?>>
-                                        <label for="campo-senha">SENHA*</label>
-                                    </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="campo-apelido" required
+                                    name = "atualizacao-apelido"
+                                    value=<?php echo $apelido ?>>
+                                    <label for="campo-apelido">APELIDO*</label>
                                 </div>
                             </div>
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
@@ -208,6 +242,61 @@
                 </div>
             </form>
         </div>
+
+        <div class="modal fade" id="modal-mudar-senha" tabindex="-1" aria-labelledby="modal-mudar-senha-titulo" aria-hidden="true">
+            <form action="http://localhost/prj-integrador-jogo-site/paginas/php/senha-ctrl.php" method="POST">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-mudar-senha-titulo">Trocar Senha</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="campo-senha" required
+                                    name = "atualizacao-senha-atual">
+                                    <label for="campo-senha">SENHA ATUAL*</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="campo-senha" required
+                                    name = "atualizacao-senha-nova" minlength="5">
+                                    <label for="campo-senha">NOVA SENHA*</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="campo-senha" required
+                                    name = "atualizacao-senha-conf-nova">
+                                    <label for="campo-senha">CONFIRMAÇÃO NOVA SENHA*</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-outline-success">Atualizar</button>
+                    </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <?php
+            if(isset($_SESSION["erro-atualizacao"])){
+                unset($_SESSION["erro-atualizacao"]);
+            }
+            if(isset($_SESSION["sucesso-atualizacao"])){
+                unset($_SESSION["sucesso-atualizacao"]);
+            }
+        ?>
 
     </body>
 

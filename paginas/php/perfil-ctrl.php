@@ -14,20 +14,24 @@
 
         if(!isset($resposta->ObjetoResposta))
         {
-            echo ("<SCRIPT LANGUAGE='JavaScript'>
-            window.alert('SEM INFORMAÇÕES DE PERFIL!')
-            window.location.href='http://localhost/prj-integrador-jogo-site/paginas/pagina-inicial.php';
-            </SCRIPT>");            
+            header('location: ../pagina-inicial.php');
         }else{
-            unset($_SESSION["usuario"]);
+            if(isset($_SESSION["usuario"])){
+                unset($_SESSION["usuario"]);
+            }
             $_SESSION["usuario"] = $resposta->ObjetoResposta;
-            header('location: http://localhost/prj-integrador-jogo-site/paginas/pagina-perfil.php');
+            json_encode($_SESSION["usuario"]);
+            header('location: ../pagina-perfil.php');
         }
     }
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         session_start();
+
+        if(isset($_SESSION["sucesso-atualizacao"])){
+            unset($_SESSION["sucesso-atualizacao"]);
+        }
         
         require_once 'servicos/requisicao-servico.php';
         $url  = "http://gmolaadventure.orgfree.com/prj-integrador-servico/View/usuario/atualizar-usuario.php";
@@ -44,8 +48,12 @@
         $resposta = json_decode(chamarAPI("POST", $url, json_encode($dados)));
 
         echo json_encode($resposta);
-        
-        header('location: http://localhost/prj-integrador-jogo-site/paginas/php/perfil-ctrl.php');
-        // header('location: http://localhost/prj-integrador-jogo-site/paginas/pagina-perfil.php');
+
+        if($resposta->Sucesso){
+            $_SESSION["sucesso-atualizacao"] = "DADOS ATUALIZADOS COM SUCESSO!";
+        }else{
+            $_SESSION["erro-atualizacao"] = empty($resposta->MensagemResposta) ? "ERRO NA ATUALIZAÇÃO DE DADOS" : $resposta->MensagemResposta;
+        }
+        header('location: ./perfil-ctrl.php');
     }
 ?>
