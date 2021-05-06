@@ -109,8 +109,9 @@
                         <?php
                         
                         if(isset($_SESSION["usuario-id"])){
+                            $posicao = array_search($_SESSION["usuario"]->UsuarioApelido,array_column($_SESSION["ranking"],'UsuarioApelido'));
                             echo "<div class='row sua-posicao'>";
-                            echo "<span><strong>SUA POSIÇÃO: ".(array_search($_SESSION["usuario-id"], $_SESSION["ranking"])+1)."° </strong></span>";
+                            echo "<span><strong>SUA POSIÇÃO: ".($posicao+1)."° </strong></span>";
                             echo "</div>";
                         }
                         

@@ -64,7 +64,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <img src="http://cdn.onlinewebfonts.com/svg/img_248263.png" width="30" height="30">
-                                                Windows 7
+                                                Windows XP
                                             </div>
                                             <div class="col">
                                                 <img src="https://svgsilh.com/svg/152655.svg" width="30" height="30">
@@ -72,7 +72,7 @@
                                             </div>
                                             <div class="col">
                                                 <img src="https://image.flaticon.com/icons/png/512/64/64481.png" width="30" height="30">
-                                                25GB livre em disco
+                                                500MB livre em disco
                                             </div>
                                         </div>
                                     </div>
