@@ -41,8 +41,7 @@
             'nome' => $_POST["atualizacao-nome"],
             'sobrenome' => $_POST["atualizacao-sobrenome"],
             'apelido' => $_POST["atualizacao-apelido"],
-            'email' => $_POST["atualizacao-email"],
-            'senha' => $_POST["atualizacao-senha"],
+            'email' => $_POST["atualizacao-email"]
         );
 
         $resposta = json_decode(chamarAPI("POST", $url, json_encode($dados)));
@@ -52,7 +51,7 @@
         if($resposta->Sucesso){
             $_SESSION["sucesso-atualizacao"] = "DADOS ATUALIZADOS COM SUCESSO!";
         }else{
-            $_SESSION["erro-atualizacao"] = empty($resposta->MensagemResposta) ? "ERRO NA ATUALIZAÇÃO DE DADOS" : $resposta->MensagemResposta;
+            $_SESSION["erro-atualizacao"] = empty($resposta->MensagemResposta) ? "ERRO NA ATUALIZAÇÃO DE DADOS" : mb_strtoupper($resposta->MensagemResposta, 'UTF-8');
         }
         header('location: ./perfil-ctrl.php');
     }

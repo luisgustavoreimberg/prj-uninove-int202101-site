@@ -11,7 +11,7 @@
         $_SESSION["ranking"] = $resposta->ObjetoResposta;
 
         // echo $_SESSION["ranking"];
-        header('location: http://localhost/prj-integrador-jogo-site/paginas/pagina-ranking.php');
+        header('location: ../pagina-ranking.php');
 
     }
 ?>

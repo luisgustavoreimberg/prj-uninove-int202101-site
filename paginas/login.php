@@ -22,7 +22,7 @@
                 <h2><strong>Diga quem você é, e entre em sua aventura!</strong></h2><br/>
 
                 <!--#### LOGIN ####-->
-                <form action="http://localhost/prj-integrador-jogo-site/paginas/php/login-ctrl.php" method="POST">
+                <form action="./php/login-ctrl.php" method="POST">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control <?php echo (isset($_SESSION["erro-login"])?"is-invalid":""); ?>"
                         id="campo_usuario" placeholder="..."
@@ -61,7 +61,7 @@
 
                 <h3 class="link-criar-conta">
                     Não possui conta? 
-                    <a href="http://localhost/prj-integrador-jogo-site/paginas/criar-conta.php">Criar Conta</a>
+                    <a href="./criar-conta.php">Criar Conta</a>
                 </h3><br/>
 
                 <div class="d-grid gap-2">
@@ -84,7 +84,7 @@
                     <div class="row">
                         <p>Confirme seu e-mail para enviarmos a recuperação</p>
                     </div>
-                    <form action="http://localhost/prj-integrador-jogo-site/paginas/php/email-ctrl.php" method="POST">
+                    <form action="./php/email-ctrl.php" method="POST">
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="esqueci-senha-email" placeholder="meu_email@mail.com" name="email-destino" required>
                             <label for="esqueci-senha-email">EMAIL*</label>

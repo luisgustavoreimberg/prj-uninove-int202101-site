@@ -83,7 +83,7 @@
                         <div class="d-grid gap-2">
                             <div class="efeito-baixar">
                                 <a class="btn btn-outline-light btn-baixar" role="button"
-                                    href="../download/teste.bat" download="gmola_adventure"
+                                    href="../download/teste.bat" download="gmola_adventure.txt"
                                     data-front="BAIXAR JOGO" data-back="ENTRAR NA AVENTURA">
                                     BAIXAR JOGO
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">

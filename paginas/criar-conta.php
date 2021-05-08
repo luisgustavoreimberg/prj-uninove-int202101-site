@@ -21,7 +21,7 @@
             </div>
 
             <div class="formulario-cadastro">
-                    <form action="http://localhost/prj-integrador-jogo-site/paginas/php/criar-conta-ctrl.php" method="POST">
+                    <form action="./php/criar-conta-ctrl.php" method="POST">
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a href="./login.php" type="button" class="btn btn-outline-light btn-lg botao-login" data-bs-toggle="tooltip" data-bs-placement="right" title="MEU PERFIL">
