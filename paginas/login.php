@@ -19,6 +19,22 @@
             <div class="titulo-jogo">G'Mola Adventure</div>
 
             <div class="formulario-login">
+
+            <?php
+
+                if(isset($_SESSION["sucesso-recuperacao"])){
+                    echo "<div class='alert alert-success' role='alert'>";
+                    echo  $_SESSION["sucesso-recuperacao"];
+                    echo "</div>";
+                }
+                if(isset($_SESSION["erro-recuperacao"])){
+                    echo "<div class='alert alert-danger' role='alert'>";
+                    echo  $_SESSION["erro-recuperacao"];
+                    echo "</div>";
+                }
+
+            ?>
+
                 <h2><strong>Diga quem você é, e entre em sua aventura!</strong></h2><br/>
 
                 <!--#### LOGIN ####-->
@@ -84,7 +100,7 @@
                     <div class="row">
                         <p>Confirme seu e-mail para enviarmos a recuperação</p>
                     </div>
-                    <form action="./php/email-ctrl.php" method="POST">
+                    <form action="./php/recuperacao-senha.php" method="POST">
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="esqueci-senha-email" placeholder="meu_email@mail.com" name="email-destino" required>
                             <label for="esqueci-senha-email">EMAIL*</label>
@@ -109,6 +125,12 @@
             if(isset($_SESSION["sucesso-conta"])){
                 unset($_SESSION["sucesso-conta"]);
             }
+            if(isset($_SESSION["sucesso-recuperacao"])){
+                unset($_SESSION["sucesso-recuperacao"]);
+            }
+            if(isset($_SESSION["erro-recuperacao"])){
+                unset($_SESSION["erro-recuperacao"]);
+            }            
         ?>
     </body>
 </html>
