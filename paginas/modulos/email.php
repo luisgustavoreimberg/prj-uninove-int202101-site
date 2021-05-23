@@ -14,8 +14,8 @@ class Email{
         $mail->Username = 'suporte.gmola@gmail.com';
         $mail->Password = '202101godotGMola';
 
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
         $mail->IsHTML(true);
 
         //REMETENTE
@@ -23,10 +23,10 @@ class Email{
         $mail->FromName = 'Equipe Gmola';
 
         // DESTINATÁRIO
-        $mail->addAddress('luisgustavoreimberg@uni9.edu.br');
+        $mail->addAddress($destinatario);
 
         // ASSUNTO
-        $mail->Subject = 'Teste - Email Gmola';
+        $mail->Subject = 'Gmola :: Recuperacao De Senha '.date('ymdHis');
 
         // EMAIL
         $mail->Body = "

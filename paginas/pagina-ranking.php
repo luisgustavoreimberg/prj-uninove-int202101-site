@@ -119,40 +119,49 @@
                     </div>
 
                     <div class="tab-pane fade barra-de-rolagem" id="nav-completo" role="tabpanel" aria-labelledby="nav-completo-tab">
-                        <table class="table table-hover">
-                            <thead>
-                              <tr>
-                                <th scope="col">POSIÇÃO</th>
-                                <th scope="col">USUÁRIO</th>
-                                <th scope="col">PONTOS</th>
-                              </tr>
-                            </thead>
+                      <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col">POSIÇÃO</th>
+                              <th scope="col">USUÁRIO</th>
+                              <th scope="col">PONTOS</th>
+                            </tr>
+                          </thead>
 
-                            <tbody>
-                            <?php
-                                if(isset($_SESSION["ranking"])==false){
-                                    echo "<tr>";
-                                    echo "<th scope='row'>-</th>";
-                                    echo "<td>SEM DADOS DE RANKING</td>";
-                                    echo "<td>-</th>";
-                                    echo "</tr>";
-                                }
-                                else{
-                                    $i = 1;  
-                                    foreach($_SESSION["ranking"] as $ranking){
-                                        echo"<tr>";
-                                        echo"<th scope='row'>".$i."</th>";
-                                        echo"<td>".(empty($ranking->UsuarioApelido)? $ranking->UsuarioEmail : $ranking->UsuarioApelido)."</td>";
-                                        echo "<td>".$ranking->UsuarioPontuacao."</th>";
-                                        echo"</tr>";
-                                        $i++;
-                                    }
-                                }
-                              ?>
-                            </tbody>
-                        </table>
+                          <tbody>
+                              <?php
+                                  if(isset($_SESSION["ranking"])==false){
+                                      echo "<tr>";
+                                      echo "<th scope='row'>-</th>";
+                                      echo "<td>SEM DADOS DE RANKING</td>";
+                                      echo "<td>-</th>";
+                                      echo "</tr>";
+                                  }
+                                  else{
+                                      $i = 1;  
+                                      foreach($_SESSION["ranking"] as $ranking){
+                                          echo"<tr>";
+                                          echo"<th scope='row'>".$i."</th>";
+                                          echo"<td>".(empty($ranking->UsuarioApelido)? $ranking->UsuarioEmail : $ranking->UsuarioApelido)."</td>";
+                                          echo "<td>".$ranking->UsuarioPontuacao."</th>";
+                                          echo"</tr>";
+                                          $i++;
+                                      }
+                                  }
+                                ?>
+                          </tbody>
+                      </table>
                     </div>
                 </div>
+            </div>
+        </div><br/><br/>
+        <div class="rodape navbar-fixed-bottom">
+            <div class="rodape-dados-devs">
+                <span>Desenvolvido por: <a data-bs-toggle="modal" href="#devs-modal">Alunos da Uninove&reg;</a></span>
+            </div><br/>
+
+            <div class="rodape-copyright">
+                <strong>G'Mola Adventure</strong> · <?php echo date("Y") ?> &copy; Todos os direitos reservados.
             </div>
         </div>
 

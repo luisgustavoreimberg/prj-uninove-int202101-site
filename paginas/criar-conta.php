@@ -97,7 +97,16 @@
                         </div>
                     </form>
             </div>
-        </div>        
+        </div><br/><br/>
+        <div class="rodape navbar-fixed-bottom">
+            <div class="rodape-dados-devs">
+                <span>Desenvolvido por: <a data-bs-toggle="modal" href="#devs-modal">Alunos da Uninove&reg;</a></span>
+            </div><br/>
+
+            <div class="rodape-copyright">
+                <strong>G'Mola Adventure</strong> · <?php echo date("Y") ?> &copy; Todos os direitos reservados.
+            </div>
+        </div>       
 
         <?php 
             if(isset($_SESSION["erro-criar-conta-preenchimento"])){
@@ -107,5 +116,43 @@
                 unset($_SESSION["erro-criar-conta"]);
             }
         ?>
+
+        <!-- NOME DEVS -->
+        <div class="modal fade" id="devs-modal" tabindex="-1" aria-labelledby="devs-modal-titulo" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="devs-modal-titulo"><strong>Desenvolvedores</strong></h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-devs">
+                    <div class="row">
+                        <strong>JOGO</strong>
+                            - Thiago da Cruz Lino<br/>
+                            - Raphael Lins dos Santos<br/>
+                            - Welison Pereira Araújo<br/>
+                            - Gustavo Henrique Barcellos Jaques
+                    </div><br/>
+
+                    <div class="row">
+                        <strong>SITE E SERVIÇOS</strong>
+                            - Luis Gustavo Gonçalves Reimberg<br/>
+                            - Daniel dos Santos Pierre<br/>
+                            - James Lima Moreira Da Cruz
+                    </div><br/>
+
+                    <div class="row">
+                        <strong>DOCUMENTAÇÃO</strong>
+                            - Kethylen Raissa Leal da Silva<br/>
+                            - Matheus Ferreira Da Silva<br/>
+                            - Estevão Souza Dos Santos
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

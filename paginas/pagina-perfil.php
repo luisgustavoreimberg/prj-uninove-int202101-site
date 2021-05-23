@@ -180,6 +180,39 @@
 
                 </div>
             </div>
+        </div><br/><br/><br/>
+        <div class="rodape navbar-fixed-bottom">
+            <div class="rodape-dados">
+
+                <div class="rodape-dados-links">
+                    <div class="row">
+                        <div class="col">
+                            <a href="">Página Inicial</a><br/>
+                            Requisitos mínimos<br/>
+                            Download do jogo<br/>
+                        </div>
+                        <div class="col">
+                            <a href="">Minha Conta</a><br/>
+                            Edição de dados<br/>
+                            Substituição de senha<br/>
+                        </div>
+                        <div class="col">
+                            <a href="">Ranking</a><br/>
+                            Top 5 jogadores<br/>
+                            Ranking completo<br/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rodape-dados-devs">
+                    <span>Desenvolvido por: <a data-bs-toggle="modal" href="#devs-modal">Alunos da Uninove&reg;</a></span>
+                </div>
+
+            </div>
+
+            <div class="rodape-copyright">
+                <strong>G'Mola Adventure</strong> · <?php echo date("Y") ?> &copy; Todos os direitos reservados.
+            </div>
         </div>
 
         <div class="modal fade" id="modal-atualizacao" tabindex="-1" aria-labelledby="modal-atualizacao-titulo" aria-hidden="true">

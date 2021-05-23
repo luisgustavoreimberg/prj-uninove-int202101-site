@@ -6,8 +6,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
         <?php
-            require './modulos/logout.php';
-
+            require_once './modulos/logout.php';
+            
             session_start();
 
             if(!isset($_SESSION["usuario-id"])){
@@ -105,5 +105,38 @@
             </div>
         </div>
 
+        <div class="rodape navbar-fixed-bottom">
+            <div class="rodape-dados">
+
+                <div class="rodape-dados-links">
+                    <div class="row">
+                        <div class="col">
+                            <a href="">Página Inicial</a><br/>
+                            Requisitos mínimos<br/>
+                            Download do jogo<br/>
+                        </div>
+                        <div class="col">
+                            <a href="">Minha Conta</a><br/>
+                            Edição de dados<br/>
+                            Substituição de senha<br/>
+                        </div>
+                        <div class="col">
+                            <a href="">Ranking</a><br/>
+                            Top 5 jogadores<br/>
+                            Ranking completo<br/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rodape-dados-devs">
+                    <span>Desenvolvido por: <a data-bs-toggle="modal" href="#devs-modal">Alunos da Uninove&reg;</a></span>
+                </div>
+
+            </div>
+
+            <div class="rodape-copyright">
+                <strong>G'Mola Adventure</strong> · <?php echo date("Y") ?> &copy; Todos os direitos reservados.
+            </div>
+        </div>
     </body>
 </html>

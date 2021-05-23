@@ -62,3 +62,11 @@ body{
     font-size: 1.5em;
     width: 100%;
 }
+
+.nome-usuario span{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    display: inline-block;
+    overflow-x: auto;
+}

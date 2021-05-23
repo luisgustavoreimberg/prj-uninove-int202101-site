@@ -47,11 +47,6 @@ thead tr th{
     font-weight: bold;
 }
 
-thead{
-    background-color: rgba(0,0,0,1);
-    color: rgba(255, 255, 255, 1);
-}
-
 .sua-posicao{
     margin-left: 1%;
     margin-right: 1%;
@@ -64,5 +59,19 @@ thead{
 
 .barra-de-rolagem{
     height: 300px;
-    overflow-y: auto;
+    overflow: auto;
+}
+.barra-de-rolagem thead th{
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,1);
+    color: rgba(255, 255, 255, 1);
+}
+.barra-de-rolagem thead{
+    background-color: transparent;
+}
+
+thead{
+    background-color: rgba(0,0,0,1);
+    color: rgba(255, 255, 255, 1);
 }
