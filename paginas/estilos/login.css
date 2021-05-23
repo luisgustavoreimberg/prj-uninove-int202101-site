@@ -35,7 +35,7 @@ body{
     width: 60%;
     min-width: 400px;
     display: grid;
-    grid-template-rows: 0.5fr 3fr;
+    grid-template-rows: 0.8fr 3fr;
     margin-top: 2%;
 }
 
@@ -153,3 +153,24 @@ body{
     color: rgb(160, 160, 160);
 }
 /*###########################################*/
+
+
+@media(max-width: 1200px){
+    .grupo-formulario-login{
+        width: 80%;
+    }
+}
+@media(max-width: 900px){
+    .campo-senha{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media(max-width: 700px){
+    .campo-senha{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .grupo-formulario-login{
+        width: 100%;
+    }
+}

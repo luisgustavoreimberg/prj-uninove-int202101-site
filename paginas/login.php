@@ -19,21 +19,20 @@
             <div class="titulo-jogo">G'Mola Adventure</div>
 
             <div class="formulario-login">
+                <?php
 
-            <?php
+                    if(isset($_SESSION["sucesso-recuperacao"])){
+                        echo "<div class='alert alert-success' role='alert'>";
+                        echo  $_SESSION["sucesso-recuperacao"];
+                        echo "</div>";
+                    }
+                    if(isset($_SESSION["erro-recuperacao"])){
+                        echo "<div class='alert alert-danger' role='alert'>";
+                        echo  $_SESSION["erro-recuperacao"];
+                        echo "</div>";
+                    }
 
-                if(isset($_SESSION["sucesso-recuperacao"])){
-                    echo "<div class='alert alert-success' role='alert'>";
-                    echo  $_SESSION["sucesso-recuperacao"];
-                    echo "</div>";
-                }
-                if(isset($_SESSION["erro-recuperacao"])){
-                    echo "<div class='alert alert-danger' role='alert'>";
-                    echo  $_SESSION["erro-recuperacao"];
-                    echo "</div>";
-                }
-
-            ?>
+                ?>
 
                 <h2><strong>Diga quem você é, e entre em sua aventura!</strong></h2><br/>
 
@@ -80,11 +79,19 @@
                     <a href="./criar-conta.php">Criar Conta</a>
                 </h3><br/>
 
-                <div class="d-grid gap-2">
-                    <a href='./pagina-ranking.php' type='button' class='btn btn-lg btn-outline-light botao-sair'>
-                        RANKING DOS HERÓIS
-                    </a>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <div class="d-grid gap-2 col">
+                        <a href="./index.php" type="button" class="btn btn-outline-light btn-lg botao-login" data-bs-toggle="tooltip" data-bs-placement="right" title="MEU PERFIL">
+                            PÁGINA INICIAL
+                        </a>
+                    </div>
+                    <div class="d-grid gap-2 col">
+                        <a href='./pagina-ranking.php' type='button' class='btn btn-lg btn-outline-light botao-sair'>
+                            RANKING DOS HERÓIS
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </div><br/><br/>
         <div class="rodape navbar-fixed-bottom">
