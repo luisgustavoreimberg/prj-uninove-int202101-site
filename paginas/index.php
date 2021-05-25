@@ -86,17 +86,21 @@
                 <div class="historia-texto">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac ante eget mi interdum auctor. Sed a tincidunt purus, sed congue tellus. Nulla sit amet rhoncus mi, non consequat risus. Aliquam et lacus sed urna vestibulum iaculis quis vitae nunc. Quisque volutpat suscipit sem semper molestie. Suspendisse accumsan ex ex, sit amet vehicula sapien tristique ut. Phasellus aliquam ipsum mi, eu finibus elit vehicula fermentum. Etiam at dignissim risus. Mauris euismod nibh arcu, porttitor maximus lectus pellentesque ut. Proin ac suscipit leo. Donec ultricies pretium felis a fermentum. Ut auctor quam ac rhoncus rutrum.
                 </div>
-                <div>
-                    <img src="../imagens/fundo_site_login.png" width="400" height="300">
+                <div class="img">
+                    <img src="../imagens/fundo_site_interno.png" width="400" height="300">
                 </div>
             </div>
 
             <div class="historia-2">
-                <div>
+                <div class="img">
                     <img src="../imagens/fundo_site_login.png" width="400" height="300">
                 </div>
                 <div class="historia-texto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac ante eget mi interdum auctor. Sed a tincidunt purus, sed congue tellus. Nulla sit amet rhoncus mi, non consequat risus. Aliquam et lacus sed urna vestibulum iaculis quis vitae nunc. Quisque volutpat suscipit sem semper molestie. Suspendisse accumsan ex ex, sit amet vehicula sapien tristique ut. Phasellus aliquam ipsum mi, eu finibus elit vehicula fermentum. Etiam at dignissim risus. Mauris euismod nibh arcu, porttitor maximus lectus pellentesque ut. Proin ac suscipit leo. Donec ultricies pretium felis a fermentum. Ut auctor quam ac rhoncus rutrum.
+                    <h3>Como funciona</h3>
+                    Você assume o comando do nosso personagem e entra em uma batalha épica, enfrentando os inimigos dentro dos diversos cenários. Ao final de cada cenário, você terá que enfrentar e matar o boss para passar para a próxima fase.<br/>
+                    Cada inimigo que você matar e cada coração que pegar dentro do cenário conta como pontuação que, somada com o tempo, resulta na pontuação final que ficara no 
+                    <a href="./pagina-ranking.php">ranking dos heróis</a>.<br/>
+                    <strong>Quanto melhor for sua pontuação, mais avançado no ranking você estará!</strong>
                 </div>
             </div>
         </div><br/><br/>

@@ -120,17 +120,17 @@
                 <div class="rodape-dados-links">
                     <div class="row">
                         <div class="col">
-                            <a href="">Página Inicial</a><br/>
+                            <a href="./pagina-inicial.php">Página Inicial</a><br/>
                             Requisitos mínimos<br/>
                             Download do jogo<br/>
                         </div>
                         <div class="col">
-                            <a href="">Minha Conta</a><br/>
+                            <a href="./pagina-perfil.php">Minha Conta</a><br/>
                             Edição de dados<br/>
                             Substituição de senha<br/>
                         </div>
                         <div class="col">
-                            <a href="">Ranking</a><br/>
+                            <a href="./pagina-ranking.php">Ranking</a><br/>
                             Top 5 jogadores<br/>
                             Ranking completo<br/>
                         </div>

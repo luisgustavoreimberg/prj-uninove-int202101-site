@@ -81,7 +81,7 @@
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                     <div class="d-grid gap-2 col">
-                        <a href="./index.php" type="button" class="btn btn-outline-light btn-lg botao-login" data-bs-toggle="tooltip" data-bs-placement="right" title="MEU PERFIL">
+                        <a href="./index.php" type="button" class="btn btn-outline-light btn-lg botao-sair" data-bs-toggle="tooltip" data-bs-placement="right" title="MEU PERFIL">
                             PÁGINA INICIAL
                         </a>
                     </div>
