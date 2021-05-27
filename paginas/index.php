@@ -84,16 +84,18 @@
 
             <div class="historia-1">
                 <div class="historia-texto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac ante eget mi interdum auctor. Sed a tincidunt purus, sed congue tellus. Nulla sit amet rhoncus mi, non consequat risus. Aliquam et lacus sed urna vestibulum iaculis quis vitae nunc. Quisque volutpat suscipit sem semper molestie. Suspendisse accumsan ex ex, sit amet vehicula sapien tristique ut. Phasellus aliquam ipsum mi, eu finibus elit vehicula fermentum. Etiam at dignissim risus. Mauris euismod nibh arcu, porttitor maximus lectus pellentesque ut. Proin ac suscipit leo. Donec ultricies pretium felis a fermentum. Ut auctor quam ac rhoncus rutrum.
+                    Nosso personagem foi aprisionado no submundo de GMola, um lugar feito em camadas e cheio de inimigos hostis.
+                    Para se libertar desse lugar ele deve derrotar a morte, rainha do submundo e responsável por aprisioná-lo. Porém, para chegar até essa batalha, nosso personagem deve superar os inimigos e atravessar todas as camadas desse submundo sombrio.<br/>
+                    <a href="./pagina-ranking.php">Entre nessa luta</a> e vença os inimigos para libertar nosso personagem nessa aventura.
                 </div>
                 <div class="img">
-                    <img src="../imagens/fundo_site_interno.png" width="400" height="300">
+                    <img src="../imagens/../imagens/index_img_2.png" width="400" height="300">
                 </div>
             </div>
 
             <div class="historia-2">
                 <div class="img">
-                    <img src="../imagens/fundo_site_login.png" width="400" height="300">
+                    <img src="../imagens/index_img_1.png" width="400" height="300">
                 </div>
                 <div class="historia-texto">
                     <h3>Como funciona</h3>
