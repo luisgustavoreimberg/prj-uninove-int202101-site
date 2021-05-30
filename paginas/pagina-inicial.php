@@ -72,8 +72,8 @@
                                     <div class="card card-body">
                                         <div class="row">
                                             <div class="col">
-                                                <img src="http://cdn.onlinewebfonts.com/svg/img_248263.png" width="30" height="30">
-                                                Windows XP
+                                                <img src="https://cdn.icon-icons.com/icons2/813/PNG/512/windows-10_icon-icons.com_66166.png" width="30" height="30"> Windows <br/><br/>
+                                                <img src="https://cdn.iconscout.com/icon/free/png-256/ios-apple-572947.png" width="30" height="30"/> Mac OS
                                             </div>
                                             <div class="col">
                                                 <img src="https://svgsilh.com/svg/152655.svg" width="30" height="30">
@@ -89,11 +89,11 @@
                             </div>
                         </div><br/>
 
+                        <!-- href="../download/teste.bat" download="gmola_adventure.txt" -->
                         <div class="d-grid gap-2">
                             <div class="efeito-baixar">
                                 <a class="btn btn-outline-light btn-baixar" role="button"
-                                    href="../download/teste.bat" download="gmola_adventure.txt"
-                                    data-front="BAIXAR JOGO" data-back="ENTRAR NA AVENTURA">
+                                    data-bs-toggle="modal" href="#modal-download" role="button">
                                     BAIXAR JOGO
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
                                         <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
@@ -114,9 +114,10 @@
             </div>
         </div>
 
+
+        <!--########## RODAPÉ ##########-->
         <div class="rodape navbar-fixed-bottom">
             <div class="rodape-dados">
-
                 <div class="rodape-dados-links">
                     <div class="row">
                         <div class="col">
@@ -136,15 +137,92 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="rodape-dados-devs">
                     <span>Desenvolvido por: <a data-bs-toggle="modal" href="#devs-modal">Alunos da Uninove&reg;</a></span>
                 </div>
-
             </div>
 
             <div class="rodape-copyright">
                 <strong>G'Mola Adventure</strong> · <?php echo date("Y") ?> &copy; Todos os direitos reservados.
+            </div>
+        </div>
+
+
+        <!--########## MODAL DOWNLOAD ##########-->
+        <div class="modal fade" id="modal-download" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-dowload-titulo" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-dowload-titulo"><strong>BAIXAR JOGO</strong></h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body modal-download-body">
+                        <nav class="nav nav-tabs" id="pills-tab" role="tablist">
+                            <button class="flex-sm-fill nav-link active" id="btn-nav-download-comum" data-bs-toggle="pill" data-bs-target="#nav-download-comum" type="button" role="tab" aria-controls="nav-download-comum" aria-selected="true">Download Comum</button>
+                            <button class="flex-sm-fill nav-link" id="btn-nav-download-drive" data-bs-toggle="pill" data-bs-target="#nav-download-drive" type="button" role="tab" aria-controls="nav-download-drive" aria-selected="false">Google Drive</button>
+                        </nav><br/>
+
+                        <div class="tab-content" id="pills-tabContent">
+                            <!--## DOWNLOAD COMUM ##-->
+                            <div class="tab-pane fade show active" id="nav-download-comum" role="tabpanel" aria-labelledby="btn-nav-download-comum">
+                                <div class="row">
+                                    <strong>Clique no botão abaixo para baixar o jogo</strong><br/>
+                                    <div class="btn-group">
+                                        <a class="modal-btn-baixar btn btn-light btn-lg" role="button" href="../download/gmola_windows.zip" download="gmola_adventure_win.zip">
+                                            WINDOWS
+                                            <img src="https://cdn.icon-icons.com/icons2/813/PNG/512/windows-10_icon-icons.com_66166.png" width="20" height="20"/>
+                                        </a>
+                                        <a class="modal-btn-baixar btn btn-light btn-lg" role="button" href="../download/gmola_mac.zip" download="gmola_adventure_mac.zip">
+                                            MAC
+                                            <img src="https://cdn.iconscout.com/icon/free/png-256/ios-apple-572947.png" width="20" height="20"/>
+                                        </a>
+                                    </div>
+                                </div><br/>
+                            </div>
+
+                            <!--## DOWNLOAD VIA GOOGLE DRIVE ##-->
+                            <div class="tab-pane fade" id="nav-download-drive" role="tabpanel" aria-labelledby="btn-nav-download-drive">
+                                <div class="row">
+                                    <strong>Clique no botão abaixo para baixar o jogo</strong><br/>
+                                    <div class="btn-group">
+                                        <a class="modal-btn-baixar btn btn-light btn-lg" role="button" href="https://drive.google.com/file/d/1f-7Knx6H2FNoAuQEpkXfaaDR9Ea3o-Zn/view?usp=sharing" target="blank">
+                                            WINDOWS
+                                            <img src="https://cdn.icon-icons.com/icons2/813/PNG/512/windows-10_icon-icons.com_66166.png" width="20" height="20"/>
+                                        </a>
+                                        <a class="modal-btn-baixar btn btn-light btn-lg" role="button" href="https://drive.google.com/file/d/14aDveuZL4ZK23duIFYW4dm1m4AOIiQLT/view?usp=sharing" target="blank">
+                                            MAC
+                                            <img src="https://cdn.iconscout.com/icon/free/png-256/ios-apple-572947.png" width="20" height="20"/>
+                                        </a>
+                                    </div>
+                                </div><br/>
+                                <div class="row">
+                                    <strong>Clique em Download na página do google drive</strong><br/>
+                                    <img class="modal-download-img" src="../imagens/adicionais/inst_download_drive_1.png">
+                                </div><br/>
+                                <div class="row">
+                                    <strong>Confirme o download</strong><br/>
+                                    <img class="modal-download-img" src="../imagens/adicionais/inst_download_drive_2.png">
+                                </div><br/>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <strong>Aguarde a finalização do download pelo navegador</strong><br/>
+                            <img class="modal-download-img" src="../imagens/adicionais/inst_download_comum_1.png">
+                        </div><br/>
+                        <div class="row">
+                            <strong>Após baixar, localize o arquivo zip baixado e realize a extração dos dados</strong><br/>
+                            <img class="modal-download-img" src="../imagens/adicionais/inst_download_geral_1.png">
+                        </div><br/>
+                        <div class="row">
+                            <strong>Extraídos os dados, execute o arquivo G'Mola.exe para jogar</strong><br/>
+                            <img class="modal-download-img" src="../imagens/adicionais/inst_download_geral_2.png">
+                        </div><br/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">FECHAR</button>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

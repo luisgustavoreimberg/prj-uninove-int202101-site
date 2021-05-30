@@ -6,7 +6,7 @@
 
     <body>
         <?php
-            header("location: ./prj-integrador-jogo-site/paginas/login.php");
+            header("location: ./prj-integrador-jogo-site/paginas/index.php");
         ?>
     </body>
 </html>

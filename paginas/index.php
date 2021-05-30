@@ -86,7 +86,7 @@
                 <div class="historia-texto">
                     Nosso personagem foi aprisionado no submundo de GMola, um lugar feito em camadas e cheio de inimigos hostis.
                     Para se libertar desse lugar ele deve derrotar a morte, rainha do submundo e responsável por aprisioná-lo. Porém, para chegar até essa batalha, nosso personagem deve superar os inimigos e atravessar todas as camadas desse submundo sombrio.<br/>
-                    <a href="./pagina-ranking.php">Entre nessa luta</a> e vença os inimigos para libertar nosso personagem nessa aventura.
+                    <a href="./login.php">Entre nessa luta</a> e vença os inimigos para libertar nosso personagem nessa aventura.
                 </div>
                 <div class="img">
                     <img src="../imagens/../imagens/index_img_2.png" width="400" height="300">

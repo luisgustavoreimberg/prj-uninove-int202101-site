@@ -124,6 +124,48 @@ body{
 .btn-baixar:hover::after, .btn-baixar:focus::after {
     animation: ring 1s infinite;
 }
+
+.modal-download-body{
+    background-color: rgba(0, 0, 0, 0.85);
+}
+.modal-download-body strong{
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
+}
+.modal-btn-baixar{
+    font-size: 1.2em;
+    font-weight: 900;
+    transition: 0.5s;
+    border: none;
+}
+.modal-btn-baixar:hover img{
+    transition: 0.5s;
+}
+.modal-btn-baixar:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+}
+.modal-btn-baixar:hover img{
+    filter: invert(1);
+}
+.modal-download-img{
+    filter: brightness(0.9);
+}
+
+.nav-link{
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 1);
+    transition: 0.5s;
+}
+.nav-link:hover{
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.nav-tabs .nav-link.active{
+    font-size: 1.5em;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+}
   
 @keyframes ring {
     0% {
